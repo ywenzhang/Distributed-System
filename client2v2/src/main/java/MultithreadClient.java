@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
  * @author Yiwen Zhang
  */
 public class MultithreadClient {
-  private static final int NUMTHREADS = 2000;
+  private static final int NUMTHREADS = 256;
   private static final int NUMSKIERS = 20000;
   private static final int NUMRUNS = 20;
   private static final int PHASE1= NUMTHREADS/4;

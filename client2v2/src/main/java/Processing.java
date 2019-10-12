@@ -16,6 +16,7 @@ public class Processing {
     long unsuccessful = 0;
     long sum = 0;
     FileWriter csvWriter = new FileWriter("src/main/resources/" +numberOfThreads+".csv");
+    FileWriter plotWriter = new FileWriter("src/main/resources/bucket.csv");
     csvWriter.append("start time");
     csvWriter.append(",");
     csvWriter.append("request type");
@@ -25,8 +26,16 @@ public class Processing {
     csvWriter.append("response code");
     csvWriter.append("\n");
     ArrayList<Long> latencyList = new ArrayList<>();
+    long maxStartTime = 0;
+    long minStartTime = Long.MAX_VALUE;
     for (Iterator it = resultQueue.iterator(); it.hasNext(); ) {
       Result result = (Result) it.next();
+      if (result.getStartTime()<minStartTime){
+        minStartTime = result.getStartTime();
+      }
+      if (result.getStartTime()>maxStartTime){
+        maxStartTime = result.getStartTime();
+      }
       csvWriter.append(String.valueOf(result.getStartTime()));
       csvWriter.append(",");
       csvWriter.append(result.getRequestType());
@@ -45,6 +54,25 @@ public class Processing {
     }
     csvWriter.flush();
     csvWriter.close();
+    int[] count = new int[(int)(maxStartTime-minStartTime+1)];
+    long[] total = new long[(int)(maxStartTime-minStartTime+1)];
+    for (Iterator it = resultQueue.iterator(); it.hasNext(); ) {
+      Result result = (Result) it.next();
+      count[(int)(result.getStartTime()-minStartTime)] += 1;
+      total[(int)(result.getStartTime()-minStartTime)] += result.getLatency();
+    }
+    for(int i=0; i<count.length;i++){
+      if(count[i] == 0){
+        count[i] = 1;
+      }
+      double average = (double)total[i]/count[i];
+      plotWriter.append(String.valueOf(i));
+      plotWriter.append(",");
+      plotWriter.append(String.valueOf(average));
+      plotWriter.append("\n");
+    }
+    plotWriter.flush();
+    plotWriter.close();
     if(latencyList.size() == 0){
       System.out.println("No results");
       return;

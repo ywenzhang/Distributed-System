@@ -6,7 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0407230c-be27-4bd1-8e12-cbad53b9bec2" name="Default Changelist" comment="" />
+    <list default="true" id="0407230c-be27-4bd1-8e12-cbad53b9bec2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../client2v2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Building Scalable Distributed Systems.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2v2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client2v2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2v2/src/main/java/MultithreadClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client2v2/src/main/java/MultithreadClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2v2/src/main/java/Processing.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client2v2/src/main/java/Processing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client2v2/src/main/resources/256.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../client2v2/src/main/resources/256.csv" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/SkierServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-262">
-              <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,6 +94,9 @@
       <find>method</find>
       <find>System</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -122,12 +133,13 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="66" />
     <option name="y" value="23" />
     <option name="width" value="1374" />
     <option name="height" value="822" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -200,6 +212,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -375,16 +388,15 @@
       <workItem from="1569719186705" duration="3015000" />
       <workItem from="1570451335777" duration="1140000" />
       <workItem from="1570681923079" duration="269000" />
-      <workItem from="1570754129685" duration="15910000" />
+      <workItem from="1570754129685" duration="16504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24402000" />
+    <option name="totallyTimeSpent" value="24996000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="23" width="1374" height="822" extended-state="1" />
-    <editor active="true" />
+    <frame x="66" y="23" width="1374" height="822" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.90612245" visible="true" weight="0.3003003" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -451,7 +463,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/SkierServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-262">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
