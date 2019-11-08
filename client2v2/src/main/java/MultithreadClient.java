@@ -7,19 +7,26 @@ import java.util.concurrent.CountDownLatch;
  * @author Yiwen Zhang
  */
 public class MultithreadClient {
-  private static final int NUMTHREADS = 256;
-  private static final int NUMSKIERS = 20000;
+  private int NUMTHREADS;
+  private static final int NUMSKIERS = 20000;//20000
   private static final int NUMRUNS = 20;
-  private static final int PHASE1= NUMTHREADS/4;
-  private static final int PHASE2 = NUMTHREADS;
-  private static final int PHASE3 = NUMTHREADS/4;
+  private int PHASE1;
+  private int PHASE2;
+  private int PHASE3;
   private final CountDownLatch startSignal1 = new CountDownLatch(1);
-  private final CountDownLatch startSignal2 = new CountDownLatch(PHASE1/10);
-  private final CountDownLatch startSignal3 = new CountDownLatch(PHASE2/10);
-  private final CountDownLatch endSignal = new CountDownLatch(NUMTHREADS*3/2);
+  private CountDownLatch startSignal2;
+  private CountDownLatch startSignal3;
+  private CountDownLatch endSignal;
   private ConcurrentLinkedDeque queue = new ConcurrentLinkedDeque();
 
-  public MultithreadClient() {
+  public MultithreadClient(int number_of_threads) {
+    this.NUMTHREADS = number_of_threads;
+    this.PHASE1 = NUMTHREADS/4;
+    this.PHASE2 = NUMTHREADS;
+    this.PHASE3 = NUMTHREADS/4;
+    this.startSignal2 = new CountDownLatch(PHASE1/10);
+    this.startSignal3 = new CountDownLatch(PHASE2/10);
+    this.endSignal =  new CountDownLatch(NUMTHREADS*3/2);
   }
 
   //public synchronized void inc() {
@@ -86,7 +93,7 @@ public class MultithreadClient {
           this.startSignal3.await();
           RequestGenerator rg = new RequestGenerator((int)(finalI_Phase3*(double)NUMSKIERS/PHASE3+1),(int)((finalI_Phase3+1)*(double)NUMSKIERS/PHASE3),361,420);
           for(int j = 0 ; j < (int)((NUMRUNS*0.1)*(double)NUMSKIERS/PHASE3);j++){
-            rg.sendRequest();
+            rg.sendPOSTandGETRequests();
             //this.inc();
           }
           //this.inc();
@@ -111,7 +118,7 @@ public class MultithreadClient {
     return queue;
   }
 
-  public static int getNUMTHREADS() {
+  public int getNUMTHREADS() {
     return NUMTHREADS;
   }
 }

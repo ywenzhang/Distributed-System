@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="server:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/server_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="server/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="server" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.21" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.21" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.6.RELEASE" />
+          <element id="file-copy" path="$PROJECT_DIR$/../swagger-client/swagger-java-client-1.0.0.jar" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          <element id="file-copy" path="$PROJECT_DIR$/../gson-2.8.2.jar" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.7.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-dbcp2:2.7.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.18" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

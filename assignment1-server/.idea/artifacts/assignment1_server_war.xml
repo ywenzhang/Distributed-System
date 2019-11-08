@@ -3,6 +3,12 @@
     <output-path>$PROJECT_DIR$/out/artifacts/assignment1_server_war</output-path>
     <root id="archive" name="assignment1-server_war.war">
       <element id="artifact" artifact-name="assignment1-server:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../swagger-client/swagger-java-client-1.0.0.jar" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

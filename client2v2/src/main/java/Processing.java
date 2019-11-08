@@ -1,4 +1,4 @@
-import java.io.FileWriter;
+//import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,16 +15,16 @@ public class Processing {
     long successful = 0;
     long unsuccessful = 0;
     long sum = 0;
-    FileWriter csvWriter = new FileWriter("src/main/resources/" +numberOfThreads+".csv");
-    FileWriter plotWriter = new FileWriter("src/main/resources/bucket.csv");
-    csvWriter.append("start time");
-    csvWriter.append(",");
-    csvWriter.append("request type");
-    csvWriter.append(",");
-    csvWriter.append("latency");
-    csvWriter.append(",");
-    csvWriter.append("response code");
-    csvWriter.append("\n");
+//    FileWriter csvWriter = new FileWriter("src/main/resources/" +numberOfThreads+".csv");
+//    FileWriter plotWriter = new FileWriter("src/main/resources/bucket.csv");
+//    csvWriter.append("start time");
+//    csvWriter.append(",");
+//    csvWriter.append("request type");
+//    csvWriter.append(",");
+//    csvWriter.append("latency");
+//    csvWriter.append(",");
+//    csvWriter.append("response code");
+//    csvWriter.append("\n");
     ArrayList<Long> latencyList = new ArrayList<>();
     long maxStartTime = 0;
     long minStartTime = Long.MAX_VALUE;
@@ -36,14 +36,14 @@ public class Processing {
       if (result.getStartTime()>maxStartTime){
         maxStartTime = result.getStartTime();
       }
-      csvWriter.append(String.valueOf(result.getStartTime()));
-      csvWriter.append(",");
-      csvWriter.append(result.getRequestType());
-      csvWriter.append(",");
-      csvWriter.append(String.valueOf(result.getLatency()));
-      csvWriter.append(",");
-      csvWriter.append(String.valueOf(result.getResponseCode()));
-      csvWriter.append("\n");
+//      csvWriter.append(String.valueOf(result.getStartTime()));
+//      csvWriter.append(",");
+//      csvWriter.append(result.getRequestType());
+//      csvWriter.append(",");
+//      csvWriter.append(String.valueOf(result.getLatency()));
+//      csvWriter.append(",");
+//      csvWriter.append(String.valueOf(result.getResponseCode()));
+//      csvWriter.append("\n");
       if (result.getResponseCode() == 201){
         successful += 1;
       }else{
@@ -52,8 +52,8 @@ public class Processing {
       latencyList.add(result.getLatency());
       sum += result.getLatency();
     }
-    csvWriter.flush();
-    csvWriter.close();
+//    csvWriter.flush();
+//    csvWriter.close();
     int[] count = new int[(int)(maxStartTime-minStartTime+1)];
     long[] total = new long[(int)(maxStartTime-minStartTime+1)];
     for (Iterator it = resultQueue.iterator(); it.hasNext(); ) {
@@ -66,13 +66,13 @@ public class Processing {
         count[i] = 1;
       }
       double average = (double)total[i]/count[i];
-      plotWriter.append(String.valueOf(i));
-      plotWriter.append(",");
-      plotWriter.append(String.valueOf(average));
-      plotWriter.append("\n");
+//      plotWriter.append(String.valueOf(i));
+//      plotWriter.append(",");
+//      plotWriter.append(String.valueOf(average));
+//      plotWriter.append("\n");
     }
-    plotWriter.flush();
-    plotWriter.close();
+//    plotWriter.flush();
+//    plotWriter.close();
     if(latencyList.size() == 0){
       System.out.println("No results");
       return;
@@ -89,14 +89,14 @@ public class Processing {
     long maxResponseTime = latencyList.get(latencyList.size()-1);
     long mean = sum/latencyList.size();
     long p99 = latencyList.get((int)(latencyList.size()*0.99-1));
-    System.out.println("total time spent: " + wallTime);
+    System.out.println("total time spent: " + wallTime/1000 + " s");
     System.out.println("number of threads: " + numberOfThreads);
     System.out.println("number of successful requests: " + successful);
     System.out.println("number of unsuccessful requests: " + unsuccessful);
-    System.out.println("mean response time: " + mean);
-    System.out.println("median response time: " + median);
-    System.out.println("throughput: " + throughput);
-    System.out.println("p99: " + p99);
-    System.out.println("max response time: " + maxResponseTime);
+    System.out.println("mean response time: " + mean + " ms");
+    System.out.println("median response time: " + median + " ms");
+    System.out.println("throughput: " + throughput*1000 + " /s");
+    System.out.println("p99: " + p99 + " ms");
+    System.out.println("max response time: " + maxResponseTime + " ms");
   }
 }

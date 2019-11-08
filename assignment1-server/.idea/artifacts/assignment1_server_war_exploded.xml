@@ -9,6 +9,8 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.0" />
+          <element id="file-copy" path="$PROJECT_DIR$/../swagger-client/swagger-java-client-1.0.0.jar" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
         </element>
       </element>
     </root>
