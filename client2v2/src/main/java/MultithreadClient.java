@@ -42,7 +42,7 @@ public class MultithreadClient {
       int finalI_Phase1 = i;
       Runnable thread =  () -> {
         try {
-          // wait for the main thread to tell us to start
+          // wait for the Main thread to tell us to start
           this.startSignal1.await();
           RequestGenerator rg = new RequestGenerator((int)(finalI_Phase1*(double)NUMSKIERS/PHASE1+1),(int)((finalI_Phase1+1)*(double)NUMSKIERS/PHASE1),1,90);
           for(int j = 0 ; j < (int)((NUMRUNS*0.1)*(double)NUMSKIERS/PHASE1);j++){
@@ -65,7 +65,7 @@ public class MultithreadClient {
       int finalI_Phase2 = i;
       Runnable thread =  () -> {
         try {
-          // wait for the main thread to tell us to start
+          // wait for the Main thread to tell us to start
           this.startSignal2.await();
           RequestGenerator rg = new RequestGenerator((int)(finalI_Phase2*(double)NUMSKIERS/PHASE2+1),(int)((finalI_Phase2+1)*(double)NUMSKIERS/PHASE2),91,360);
           for(int j = 0 ; j < (int)((NUMRUNS*0.8)*(double)NUMSKIERS/PHASE2);j++){
@@ -76,7 +76,7 @@ public class MultithreadClient {
           this.queue.addAll(rg.getResultList());
         } catch (InterruptedException e) {
         } finally {
-          // we've finished - let the main thread know
+          // we've finished - let the Main thread know
           this.startSignal3.countDown();
           this.endSignal.countDown();
         }
@@ -89,7 +89,7 @@ public class MultithreadClient {
       int finalI_Phase3 = i;
       Runnable thread =  () -> {
         try {
-          // wait for the main thread to tell us to start
+          // wait for the Main thread to tell us to start
           this.startSignal3.await();
           RequestGenerator rg = new RequestGenerator((int)(finalI_Phase3*(double)NUMSKIERS/PHASE3+1),(int)((finalI_Phase3+1)*(double)NUMSKIERS/PHASE3),361,420);
           for(int j = 0 ; j < (int)((NUMRUNS*0.1)*(double)NUMSKIERS/PHASE3);j++){
@@ -100,7 +100,7 @@ public class MultithreadClient {
           this.queue.addAll(rg.getResultList());
         } catch (InterruptedException e) {
         } finally {
-          // we've finished - let the main thread know
+          // we've finished - let the Main thread know
           this.endSignal.countDown();
         }
       };

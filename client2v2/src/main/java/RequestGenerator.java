@@ -27,7 +27,7 @@ public class RequestGenerator {
     this.endTime = endTime;
     this.api = new SkiersApi();
     this.client = this.api.getApiClient();
-    this.client.setBasePath("http://load-balancer-92a96ffe0ddc5a13.elb.us-east-1.amazonaws.com:8080/server_war/");
+    this.client.setBasePath("https://cs6650-distributed-systemm.appspot.com/");
     this.resultList = new ArrayList<>();
   }
 

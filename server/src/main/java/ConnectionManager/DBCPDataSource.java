@@ -12,11 +12,11 @@ public class DBCPDataSource {
   private static BasicDataSource dataSource = new BasicDataSource();
 
   // NEVER store sensitive information below in plain text!
-  private static final String HOST_NAME = "distributedssystemcs6500.c0zfmgsvs3cu.us-east-1.rds.amazonaws.com";
-  private static final String PORT = "3306";
-  private static final String DATABASE = "innodb";
-  private static final String USERNAME = "yiwenzhang";
-  private static final String PASSWORD = "Zyw921019";
+  private static final String HOST_NAME = System.getProperty("host_name");
+  private static final String PORT = System.getProperty("port");
+  private static final String DATABASE = System.getProperty("database");
+  private static final String USERNAME = System.getProperty("username");
+  private static final String PASSWORD = System.getProperty("password");
   private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
   static {
     // https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-jdbc-url-format.html

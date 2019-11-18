@@ -15,8 +15,8 @@ public class Processing {
     long successful = 0;
     long unsuccessful = 0;
     long sum = 0;
-//    FileWriter csvWriter = new FileWriter("src/main/resources/" +numberOfThreads+".csv");
-//    FileWriter plotWriter = new FileWriter("src/main/resources/bucket.csv");
+//    FileWriter csvWriter = new FileWriter("src/Main/resources/" +numberOfThreads+".csv");
+//    FileWriter plotWriter = new FileWriter("src/Main/resources/bucket.csv");
 //    csvWriter.append("start time");
 //    csvWriter.append(",");
 //    csvWriter.append("request type");
